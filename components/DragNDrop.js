@@ -39,6 +39,20 @@ function DragNDrop({data}) {
         }
     }    
     
+    
+    const handleDragEnd = (e) => {
+        setDragging(false);
+        dragItem.current = null;
+        dragItemNode.current.removeEventListener('dragend', handleDragEnd)
+        dragItemNode.current = null;
+    }
+    const getStyles = (item) => {
+        if (dragItem.current.grpI === item.grpI && dragItem.current.itemI === item.itemI) {
+            return "dnd-item current"
+        }
+        return "dnd-item"
+    }
+    
     if (list) {
         return (                
             
