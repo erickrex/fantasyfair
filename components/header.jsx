@@ -1,14 +1,10 @@
 
-import { Fragment } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
-import settings from '../data/settings'
-import { colors, breakpoints } from '../data/theme'
 
 const Header = () => {
   const router = useRouter()
-  const { locale, locales } = router
 
   const oppositeLocale = locales.length > 1 ? locales.find(l => l !== locale) : null
 
@@ -44,9 +40,6 @@ const Header = () => {
             </dl>
           </div>
 
-          <Link href="/" locale={oppositeLocale}>
-            <a className="btn btn-light btn-block mx-3 md:mx-0 mb-8 md:mb-0">{ settings.text[locale].translationContent }</a>
-          </Link>
         </div>
       </div>
 
