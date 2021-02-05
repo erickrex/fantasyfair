@@ -32,8 +32,7 @@ function DragNDrop({data}) {
                 let newList = JSON.parse(JSON.stringify(oldList))
                 newList[targetItem.grpI].items.splice(targetItem.itemI, 0, newList[dragItem.current.grpI].items.splice(dragItem.current.itemI,1)[0])
                 dragItem.current = targetItem;
-                localStorage.setItem('List', JSON.stringify(newList));
-                console.log({newList})
+               
                 return newList
             })
         }
