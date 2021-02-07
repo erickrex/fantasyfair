@@ -51,7 +51,28 @@ function DragNDrop({data}) {
     
     if (list) {
         return (                
+            <div className="drag-n-drop">
+            {list.map((grp, grpI) => ( 
+              <div key={grp.title} onDragEnter={dragging && !grp.items.length?(e) => handleDragEnter(e,{grpI, itemI: 0}):null} className="dnd-group">
+                {grp.items.map((item, itemI) => (
+                  
+                  <div draggable key={item}  onDragStart={(e) => handletDragStart(e, {grpI, itemI})} onDragEnter={dragging?(e) => {handleDragEnter(e, {grpI, itemI})}:null} className={dragging?getStyles({grpI, itemI}):"dnd-item"}>
+                    {item}
+                    <Image
+                    src={`/images/${item}.png`}
+                    alt=""
+                    width="100"
+                    height="100"
+                    />
+                  
+                  </div>  
+                ))}
+                <div className={dragging?getStyles({grpI, itemI: grp.items.length+1}):"invisible"} onDragEnter={dragging ?(e) => {handleDragEnter(e, {grpI, itemI: grp.items.length})}:null} ></div> 
+                    
+              </div>
+            ))}
             
+            </div>
         )
     } else { return null}
 
