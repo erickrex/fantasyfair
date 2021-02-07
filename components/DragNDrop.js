@@ -67,9 +67,7 @@ function DragNDrop({data}) {
                   
                   </div>  
                 ))}
-                <div className={dragging?getStyles({grpI, itemI: grp.items.length+1}):"invisible"} onDragEnter={dragging ?(e) => {handleDragEnter(e, {grpI, itemI: grp.items.length})}:null} ></div> 
-                    
-              </div>
+                
             ))}
             
             </div>
