@@ -67,7 +67,7 @@ function DragNDrop({data}) {
                   
                   </div>  
                 ))}
-                
+                </div>
             ))}
             
             </div>
