@@ -12,20 +12,12 @@ const defaultData = [
 
 
 export default function Home() {
-  const [data, setData] = useState();  
-  useEffect(() => {
-    if (localStorage.getItem('List')) {
-      console.log(localStorage.getItem('List'))
-      setData(JSON.parse(localStorage.getItem('List')))
-    } else {
-      setData(defaultData)
-    }
-  }, [setData])
+  
   return (
     <div className="App">
       
       <header className="App-header">
-      <DragNDrop data={data} />
+      <DragNDrop data={defaultData} />
       </header>
       
       <Link href="/Pagina">
