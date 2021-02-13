@@ -3,7 +3,7 @@ export const Questions = [
       prompt: "Dusty Rhodes Cup Men's finals",
       contenders:   [
                         {challenger: "MSK"}, 
-                        {challenger: "Roman_Reigns"}
+                        {challenger: "Grizzled Young Veterans"}
                     ]
     },
     {
